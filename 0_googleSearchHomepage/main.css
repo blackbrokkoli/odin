@@ -60,6 +60,19 @@ input {
   width: 700px;
 }
 
+#search-execute {
+
+   float: right;
+   margin-left: -42px;
+   position: relative;
+   z-index: 2;
+   color: red;
+   font-size: 24px;
+   color: #8ab4f8;
+   line-height: 42px;
+ }
+
+
 #header-icons {
   display: flex;
   align-content: center;

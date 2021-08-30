@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+<script type="text/javascript">
+  function computerPlay() {
+    const plays = ['rock', 'paper', 'scissors']
+    return plays[Math.floor(Math.random()*plays.length)];
+  }
+
+  function playRound(playerSelection, computerSelection) {
+    if( playerSelection == computerSelection) {
+      return "tie"
+    }
+    switch(playerSelection) {
+      case "paper":
+      if (computerSelection == "scissors") {
+        return "you lose. scissors beats paper"
+      } else {
+        return "you win. paper beats rock"
+      }
+      case "rock":
+      if (computerSelection == "scissors") {
+        return "you win. rock beats scissors"
+      } else {
+        return "you loose. paper beats rock"
+      }
+      case "scissors":
+      if (computerSelection == "paper") {
+        return "you win. scissors beat paper"
+      } else {
+        return "you loose. rock beats scissors"
+      }
+    }
+  }
+
+  function game() {
+    let score = 0
+    for (let i = 0; i < 5; i++) {
+      console.info(`Move ${i + 1}:`)
+      const input = prompt().toLowerCase()
+      const resultStr = playRound(input, computerPlay())
+      console.log(resultStr)
+      if (resultStr.includes("win")) {
+        score += 1
+      }
+      if (resultStr.includes("loose")) {
+        score -= 1
+      }
+    }
+    console.log("---GAME END---")
+    if (score == 0) {
+      console.log(`you guys tie the game`)
+    }
+    if (score > 0) {
+      console.log(`you win the game with ${score} wins more`)
+    }
+    if (score < 0) {
+      console.log(`computer wins the game with ${score * -1} wins more`)
+    }
+  }
+</script>
+</html>

@@ -46,43 +46,54 @@ function main() {
       // loops through the blocks until it finds a priority op, like *
       // merges the operator and the numbers before and after
       // then does the same with low prio
-      calculationBlocks.forEach(function (block, i) {
+      try {
+        calculationBlocks.forEach(function (block, i) {
 
-        if (block == '*') {
-          mergedBlock = parseFloat(calculationBlocks[i-1]) * parseFloat(calculationBlocks[i+1])
-          calculationBlocks[i] = mergedBlock
-          calculationBlocks.splice(i+1, 1)
-          calculationBlocks.splice(i-1, 1)
-        }
+          if (block == '*') {
+            mergedBlock = parseFloat(calculationBlocks[i-1]) * parseFloat(calculationBlocks[i+1])
+            if (isNaN(mergedBlock)) { throw new Exception() }
+            calculationBlocks[i] = mergedBlock
+            calculationBlocks.splice(i+1, 1)
+            calculationBlocks.splice(i-1, 1)
+          }
 
-        if (block == '/') {
-          mergedBlock = parseFloat(calculationBlocks[i-1]) / parseFloat(calculationBlocks[i+1])
-          calculationBlocks[i] = mergedBlock
-          calculationBlocks.splice(i+1, 1)
-          calculationBlocks.splice(i-1, 1)
-        }
-      })
+          if (block == '/') {
+            if (parseInt(calculationBlocks[i + 1]) == 0) {
+              throw new Exception()
+            }
+            mergedBlock = parseFloat(calculationBlocks[i-1]) / parseFloat(calculationBlocks[i+1])
+            if (isNaN(mergedBlock)) { throw new Exception() }
+            calculationBlocks[i] = mergedBlock
+            calculationBlocks.splice(i+1, 1)
+            calculationBlocks.splice(i-1, 1)
+          }
+        })
 
-      calculationBlocks.forEach(function (block, i) {
+        calculationBlocks.forEach(function (block, i) {
 
-        if (block == '+') {
-          mergedBlock = parseFloat(calculationBlocks[i-1]) + parseFloat(calculationBlocks[i+1])
-          calculationBlocks[i] = mergedBlock
-          calculationBlocks.splice(i+1, 1)
-          calculationBlocks.splice(i-1, 1)
-        }
+          if (block == '+') {
+            mergedBlock = parseFloat(calculationBlocks[i-1]) + parseFloat(calculationBlocks[i+1])
+            if (isNaN(mergedBlock)) { throw new Exception() }
+            calculationBlocks[i] = mergedBlock
+            calculationBlocks.splice(i+1, 1)
+            calculationBlocks.splice(i-1, 1)
+          }
 
-        if (block == '-') {
-          mergedBlock = parseFloat(calculationBlocks[i-1]) - parseFloat(calculationBlocks[i+1])
-          calculationBlocks[i] = mergedBlock
-          calculationBlocks.splice(i+1, 1)
-          calculationBlocks.splice(i-1, 1)
-        }
-      })
+          if (block == '-') {
+            mergedBlock = parseFloat(calculationBlocks[i-1]) - parseFloat(calculationBlocks[i+1])
+            if (isNaN(mergedBlock)) { throw new Exception() }
+            calculationBlocks[i] = mergedBlock
+            calculationBlocks.splice(i+1, 1)
+            calculationBlocks.splice(i-1, 1)
+          }
+        })
 
-      // lastly, make the outputfield the resulting string
-      outputEl.value = calculationBlocks.join('')
-
+        // lastly, make the outputfield the resulting string
+        outputEl.value = calculationBlocks.join('')
+      } catch (error) {
+        outputEl.value = 'not how math works'
+        calculationBlocks = []
+      }
     }
   )
 }

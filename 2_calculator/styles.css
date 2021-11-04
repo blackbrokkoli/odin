@@ -85,6 +85,7 @@ input {
   color: hsla(33, 75%, 15%, .7);
   font-size: 38px;
   cursor: pointer;
+  transition: box-shadow .1s;
 }
 
 .key:hover {

@@ -3,18 +3,102 @@ html, button, input {
   font-size: 23px;
 }
 
+html {
+  background: hsla(33, 15%, 20%, 1);
+}
+
 input, button {
   margin: 4px;
   padding: 12px;
 }
 
 input {
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#calc-wrapper {
+  padding: 4px 16px 16px 4px;
+  background:  hsla(33, 25%, 33%, 1);
+  width: 600px;
+  height: 800px;
+  margin: auto;
+  box-shadow: 8px 8px 16px #222;
+  border-radius: 8px;
+  border-radius: 8px;
+  display: flex;
+  display: flex;
+  align-items: stretch;
+  border-top: 3px solid #bbb;
+  border: 2px solid #ccc;
+
 }
 
 #calc {
-  max-width: min(700px, 90%);
-  background: #ddd;
+  border-radius: 8px;
+  border: 2px solid hsla(33, 25%, 83%, 1);
+
+  background: hsla(33, 25%, 77%, 1);
   padding: 42px;
-  margin: auto;
+}
+
+#input-wrapper-outer {
+  border-radius: 4px;
+  border: 3px solid   hsla(33, 25%, 33%, 1);
+  background: hsla(33, 25%, 67%, 1);
+  padding: 24px;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px #888;
+  margin-bottom: 32px;
+}
+
+#input-wrapper-inner {
+  padding: 18px;
+  background: hsla(33, 75%, 73%, 1);
+  box-shadow: inset 5px 5px 8px #333;
+
+}
+
+#output {
+  font-family: monospace;
+  font-size: 46px;
+  padding: 0;
+  margin: 0;
+  background: hsla(33, 75%, 73%, 1);
+  border: none;
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.key {
+  border-radius: 25px;
+  background: linear-gradient(145deg, hsla(33, 15%, 50%, 1),hsla(33, 15%, 80%, 1));
+  box-shadow:  3px 3px 9px hsla(33, 75%, 10%, 1),
+  -3px -3px 1px hsla(33, 75%, 23%, 1);
+  font-family: 'Bebas Neue', cursive;
+  color: hsla(33, 75%, 15%, .7);
+  font-size: 38px;
+}
+
+h1 {
+  text-align: center;
+  color: hsla(33, 75%, 15%, .3);
+}
+
+.key-operation {
+background: linear-gradient(145deg, #40405c, #4c4c6d);
+color: hsla(360, 100%, 100%, 0.7);
+}
+
+
+.key-special {
+  background: linear-gradient(145deg, #7f5757, #976868);
+  color: hsla(360, 100%, 100%, 0.7);
 
 }

@@ -3,35 +3,50 @@
   <head>
     <meta charset="utf-8">
     <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div id="calc">
-      <input type="text" id="output" disabled="disabled" placeholder='what up feed me numbers'>
-      <div id="keys">
-        <div id="keys-numbers">
-          <button class="key key-number" id="key-1">1</button>
-          <button class="key key-number" id="key-2">2</button>
-          <button class="key key-number" id="key-3">3</button>
-          <button class="key key-number" id="key-4">4</button>
-          <button class="key key-number" id="key-5">5</button>
-          <button class="key key-number" id="key-6">6</button>
+    <div id="calc-wrapper">
+      <div id="calc">
+        <div id="input-wrapper-outer">
+          <div id="input-wrapper-inner">
+            <input type="text" id="output" disabled="disabled" placeholder='what up feed me numbers'>
+          </div>
+        </div>
+        <div id="keys">
+
           <button class="key key-number" id="key-7">7</button>
           <button class="key key-number" id="key-8">8</button>
           <button class="key key-number" id="key-9">9</button>
-          <button class="key key-number" id="key-0">0</button>
-        </div>
-        <div id="keys-operations">
-          <button class="key key-operation" id="key-plus">+</button>
           <button class="key key-operation" id="key-times">*</button>
-          <button class="key key-operation" id="key-minus">-</button>
+
+          <button class="key key-number" id="key-4">4</button>
+          <button class="key key-number" id="key-5">5</button>
+          <button class="key key-number" id="key-6">6</button>
           <button class="key key-operation" id="key-div">/</button>
-          <br>
-          <button class="key key-special" id="key-equals">=</button>
-          <button class="key key-special" id="key-clear">Clear</button>
+
+            <button class="key key-number" id="key-1">1</button>
+            <button class="key key-number" id="key-2">2</button>
+            <button class="key key-number" id="key-3">3</button>
+            <button class="key key-operation" id="key-plus">+</button>
+
+
+            <button class="key key-number" id="key-0">0</button>
+            <button class="key key-special" id="key-clear">Clear</button>
+            <button class="key key-special" id="key-equals">=</button>
+            <button class="key key-operation" id="key-minus">-</button>
+          </div>
+
+          <h1>
+            耶苏蜥蜴
+          </h1>
         </div>
       </div>
     </div>
+
     <script src="main.js"></script>
   </body>
 </html>

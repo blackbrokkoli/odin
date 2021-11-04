@@ -20,7 +20,7 @@ input {
 
 #calc-wrapper {
   padding: 4px 16px 16px 4px;
-  background:  hsla(33, 25%, 33%, 1);
+  background:  hsla(33, 25%, 18%, 1);
   width: 600px;
   height: 800px;
   margin: auto;
@@ -89,6 +89,10 @@ input {
 h1 {
   text-align: center;
   color: hsla(33, 75%, 15%, .3);
+  border-radius: 25px;
+  border: 3px solid   hsla(33, 25%, 33%, .3);
+  background: hsla(33, 25%, 33%, .05);
+  padding: 42px 18px;
 }
 
 .key-operation {

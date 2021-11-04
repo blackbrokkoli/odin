@@ -84,6 +84,13 @@ input {
   font-family: 'Bebas Neue', cursive;
   color: hsla(33, 75%, 15%, .7);
   font-size: 38px;
+  cursor: pointer;
+  transition: box-shadow .1s;
+}
+
+.key:hover {
+  box-shadow:  1px 1px 3px hsla(33, 75%, 10%, 1),
+  -1px -1px 1px hsla(33, 75%, 23%, 1);
 }
 
 h1 {
